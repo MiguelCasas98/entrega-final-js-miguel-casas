@@ -7,7 +7,7 @@
 body {
   margin: 0;
   padding: 20px;
-  background: #f5efe6; /* beige suave artesanal */
+  background: #f5efe6; 
   color: #333;
 }
 
@@ -20,7 +20,7 @@ header {
 h1 {
   margin: 0;
   font-size: 28px;
-  color: #5a4634; /* marrón suave */
+  color: #5a4634; 
 }
 
 .sub {
@@ -72,7 +72,7 @@ button {
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  background: #b08968; /* marrón claro */
+  background: #b08968; 
   color: white;
   transition: 0.2s;
 }

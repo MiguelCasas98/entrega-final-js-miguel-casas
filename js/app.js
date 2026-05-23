@@ -1,7 +1,7 @@
 const IVA = 0.21;
 const LS_KEY = 'entregable2_carrito';
 let carrito = [];
-let productos = []; // cargados desde data/product.json
+let productos = []; 
 
 // DOM
 const form = document.getElementById('product-form');
@@ -27,12 +27,12 @@ function cargarLocalStorage() {
   carrito = raw ? JSON.parse(raw) : [];
 }
 
-// formateo de moneda (respetando consigna)
+// formateo de moneda 
 function formatearMoney(n) {
   return Number(n).toLocaleString('es-AR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
-// cálculo robusto (con conversion explícita)
+// cálculo robusto 
 function calcularTotales() {
   let subtotal = 0;
   for (const item of carrito) {
@@ -47,7 +47,7 @@ function calcularTotales() {
   };
 }
 
-// render del carrito (HTML generado desde JS)
+// render del carrito 
 function renderCarrito() {
   if (carrito.length === 0) {
     cartArea.innerHTML = `<div class="empty-cart"> <span>🛒</span> Tu carrito está vacío </div>`;
@@ -79,7 +79,7 @@ function renderCarrito() {
   totalEl.textContent = `$${formatearMoney(totales.total)}`;
 }
 
-// render de lista de productos (generado por JS desde JSON)
+// render de lista de productos 
 function renderProductos() {
   if (!productListEl) return;
   productListEl.innerHTML = "";
@@ -108,7 +108,7 @@ function renderProductos() {
       const p = productos.find(x => x.id === prodId);
       if (p) {
         agregarProductoDOM(p.nombre, p.precio);
-        // feedback amigable
+        
         Swal.fire({
           toast: true,
           position: 'top-end',
@@ -138,7 +138,7 @@ function agregarProductoDOM(nombre, precio) {
     prod.nombre.toLowerCase() === name.toLowerCase()
   );
 
-  // Si NO existe → error
+  // Si NO existe dar error
   if (!productoCatalogo) {
     Swal.fire({
       icon: 'error',
@@ -148,7 +148,7 @@ function agregarProductoDOM(nombre, precio) {
     return;
   }
 
-  // Si el precio NO coincide → error
+  // Si el precio NO coincide dar error
   if (p !== productoCatalogo.precio) {
     Swal.fire({
       icon: 'error',
@@ -158,7 +158,7 @@ function agregarProductoDOM(nombre, precio) {
     return;
   }
 
-  // Si todo coincide → agregar
+  // Si todo coincide agregar
   
   carrito.push({ 
     id: generarId(), 
@@ -251,7 +251,7 @@ async function cargarProductosRemotos() {
     if (!Array.isArray(data)) throw new Error('Formato de products.json inválido');
     productos = data.map(p => ({ id: p.id || generarId(), nombre: p.nombre, precio: Number(p.precio), desc: p.desc || '' }));
   } catch (err) {
-    // mostrar error al usuario sin usar console.log
+    // mostrar error al usuario 
     Swal.fire({ icon: 'error', title: 'Error cargando productos', text: 'No se pudieron cargar los productos de data/products.json' });
     productos = [];
   }
@@ -309,7 +309,7 @@ document.getElementById("confirmarCompra").addEventListener("click", () => {
     return;
   }
 
-  // ⭐ VALIDACIÓN DEL TELÉFONO 
+  // VALIDACIÓN DEL TELÉFONO 
   if (telefono.length < 7 || telefono.length > 15) {
     Swal.fire({
       icon: 'error',
@@ -373,7 +373,6 @@ document.getElementById("confirmarCompra").addEventListener("click", () => {
   document.getElementById("checkout").style.display = "none";
 });
 
-// iniciar cuando DOM esté listo (defer ya ayuda, esto asegura)
 document.addEventListener('DOMContentLoaded', initApp);
 document.getElementById("checkout").style.display = "none";
 
