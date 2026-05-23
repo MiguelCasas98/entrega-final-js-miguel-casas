@@ -309,6 +309,16 @@ document.getElementById("confirmarCompra").addEventListener("click", () => {
     return;
   }
 
+  // ⭐ VALIDACIÓN DEL TELÉFONO 
+  if (telefono.length < 7 || telefono.length > 15) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Teléfono inválido',
+      text: 'El teléfono debe tener entre 7 y 15 números.'
+    });
+    return;
+  }
+
   // Crear listado simple de productos SIN tablas
   let listadoProductos = "";
   carrito.forEach(item => {
@@ -366,3 +376,7 @@ document.getElementById("confirmarCompra").addEventListener("click", () => {
 // iniciar cuando DOM esté listo (defer ya ayuda, esto asegura)
 document.addEventListener('DOMContentLoaded', initApp);
 document.getElementById("checkout").style.display = "none";
+
+document.getElementById("clienteTelefono").addEventListener("input", function () {
+    this.value = this.value.replace(/[^0-9]/g, "");
+});
