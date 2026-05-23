@@ -310,11 +310,11 @@ document.getElementById("confirmarCompra").addEventListener("click", () => {
   }
 
   // VALIDACIÓN DEL TELÉFONO 
-  if (telefono.length < 7 || telefono.length > 15) {
+  if (telefono.length < 8 || telefono.length > 15) {
     Swal.fire({
       icon: 'error',
       title: 'Teléfono inválido',
-      text: 'El teléfono debe tener entre 7 y 15 números.'
+      text: 'El teléfono debe tener entre 8 y 15 números.'
     });
     return;
   }
