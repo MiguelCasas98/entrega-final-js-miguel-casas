@@ -160,3 +160,20 @@ footer {
 .form-row select {
   width: 100%;
 }
+
+.empty-cart {
+  text-align: center;
+  padding: 30px;
+  margin: 20px 0;
+  background: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.empty-cart span {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 10px;
+}

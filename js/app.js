@@ -50,7 +50,7 @@ function calcularTotales() {
 // render del carrito (HTML generado desde JS)
 function renderCarrito() {
   if (carrito.length === 0) {
-    cartArea.innerHTML = '<p>No hay productos en el carrito.</p>';
+    cartArea.innerHTML = `<div class="empty-cart"> <span>🛒</span> Tu carrito está vacío </div>`;
   } else {
     let html = '<table id="cart-table"><thead><tr><th>#</th><th>Producto</th><th>Precio</th><th>Acción</th></tr></thead><tbody>';
     carrito.forEach((item, idx) => {
