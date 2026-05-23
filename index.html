@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ALCIR-AR BIJOUTERIE EN CRISTAL LIQUIDO</title>
+<link rel="stylesheet" href="css/style.css" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+</head>
+
+<body>
+<header>
+  <h1>🛒 Carrito</h1>
+  <p class="sub">ALCIR-AR BIJOUTERIE EN CRISTAL LIQUIDO</p>
+</header>
+
+<main class="container">
+
+  <section id="products-section" class="card">
+    <h2>Productos disponibles</h2>
+    <div id="product-list"></div>
+  </section>
+
+  <section class="card">
+    <h2>Agregar producto (manual)</h2>
+    <form id="product-form">
+      <div class="row">
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" placeholder="Ej: Llavero" required />
+      </div>
+      <div class="row">
+        <label for="price">Precio (ARS)</label>
+        <input id="price" name="price" type="number" step="0.01" min="0" placeholder="Ej: 4000,00" required />
+      </div>
+      <div class="row actions">
+        <button type="submit" id="addBtn">Agregar</button>
+        <button type="button" id="clearBtn">Vaciar carrito</button>
+      </div>
+    </form>
+  </section>
+
+  <section class="card">
+    <h2>Carrito</h2>
+    <div id="cart-area"></div>
+    <div id="summary" class="summary">
+      <p>Subtotal: <span id="subtotal">$0.00</span></p>
+      <p>IVA (21%): <span id="iva">$0.00</span></p>
+      <p class="total">Total: <span id="total">$0.00</span></p>
+    </div>
+  </section>
+
+<!-- checkout -->
+<button id="btnCheckout" class="btn btn-primary">Ingreso de datos de compra</button>
+
+<section id="checkout" class="card" style="display:none; margin-top:20px;">
+  <h2>DATOS PARA FACTURACION Y ENTREGA</h2>
+
+  <div class="form-row">
+    <label>Nombre del cliente:</label>
+    <input type="text" id="clienteNombre" class="form-control">
+  </div>
+
+  <div class="form-row">
+    <label>Teléfono:</label>
+    <input type="text" id="clienteTelefono" class="form-control">
+  </div>
+
+  <div class="form-row">
+    <label>Dirección:</label>
+    <input type="text" id="clienteDireccion" class="form-control">
+  </div>
+
+  <div class="form-row">
+    <label>Localidad:</label>
+    <input type="text" id="clienteLocalidad" class="form-control">
+  </div>
+
+  <div class="form-row">
+    <label>Forma de pago:</label>
+    <select id="formaPago" class="form-control">
+      <option value="">Seleccione...</option>
+      <option value="efectivo">Efectivo</option>
+      <option value="transferencia">Transferencia</option>
+      <option value="tarjeta">Tarjeta</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>Forma de entrega:</label>
+    <select id="formaEntrega" class="form-control">
+      <option value="">Seleccione...</option>
+      <option value="retiro">Retiro en local</option>
+      <option value="envio">Envío a domicilio</option>
+    </select>
+  </div>
+
+  <div class="form-row">
+    <label>Dirección (solo si es envío):</label>
+    <input type="text" id="clienteDireccionEnvio" class="form-control">
+  </div>
+
+  <button id="confirmarCompra" class="btn btn-success" style="margin-top:15px;">
+    Confirmar compra
+  </button>
+</section>
+
+</main>
+
+<footer>
+  <small>Miguel A. Casas - todos los derechos reservados 2026</small>
+</footer>
+
+<script src="./js/app.js" defer></script>
+</body>
+</html>

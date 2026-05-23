@@ -1,0 +1,162 @@
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background: #f5efe6; /* beige suave artesanal */
+  color: #333;
+}
+
+/* Encabezado */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+  color: #5a4634; /* marrón suave */
+}
+
+.sub {
+  margin-top: 6px;
+  color: #7a6a58;
+}
+
+/* Layout general */
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas */
+.card {
+  background: #fffdf8;
+  border: 1px solid #e8e0d4;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(90, 70, 52, 0.08);
+}
+
+/* Formularios */
+.row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+}
+
+.row label {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #5a4634;
+}
+
+.row input,
+.form-control,
+select {
+  padding: 8px 10px;
+  border: 1px solid #d8cfc2;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Botones */
+button {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #b08968; /* marrón claro */
+  color: white;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #8c6f54;
+}
+
+.btn-remove {
+  background: #d9534f;
+}
+
+.btn-remove:hover {
+  background: #c9302c;
+}
+
+/* Tabla del carrito */
+#cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+#cart-table th,
+#cart-table td {
+  padding: 8px;
+  border-bottom: 1px solid #e8e0d4;
+  text-align: left;
+}
+
+/* Totales */
+.summary {
+  margin-top: 12px;
+}
+
+.summary p {
+  margin: 6px 0;
+}
+
+.total {
+  font-weight: bold;
+  color: #5a4634;
+}
+
+/* Checkout */
+#checkout {
+  background: #fffdf8;
+  border: 1px solid #e8e0d4;
+  padding: 16px;
+  border-radius: 10px;
+}
+
+/* Footer */
+footer {
+  margin-top: 30px;
+  text-align: center;
+  color: #7a6a58;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 420px) {
+  body {
+    padding: 12px;
+  }
+  h1 {
+    font-size: 22px;
+  }
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #5a4634;
+}
+
+.form-row input,
+.form-row select {
+  width: 100%;
+}

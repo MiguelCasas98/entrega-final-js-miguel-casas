@@ -1,0 +1,6 @@
+[
+  { "id": "p001", "nombre": "Llaveros", "precio": 4000.00 },
+  { "id": "p002", "nombre": "Señaladores", "precio": 1500.00 },
+  { "id": "p003", "nombre": "medallas", "precio": 3000.00 },
+  { "id": "p004", "nombre": "pines", "precio": 2000.00 }
+]
